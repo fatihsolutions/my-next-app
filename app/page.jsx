@@ -1,4 +1,3 @@
-
 import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import CountrySelectionCard from "@/components/hero";
@@ -15,7 +14,11 @@ export default function Home() {
     if (data) console.log(data)
     if (error) console.log(error)
 
+
+
   };
+
+
 
   setNewView();
 
