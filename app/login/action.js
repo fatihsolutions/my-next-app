@@ -1,14 +1,22 @@
 "use server"
 
+import { redirect } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
 export default async function loginAction(formData) {
-    const { email, password } = Object.fromEntries(formData);
-    // do database sh*t
-    const { data, error } =
+    const email = formData.get("email");
+    const password = formData.get("password");
+
+    const { error } =
         await supabase.auth.signInWithPassword({
             email,
             password,
         });
-    console.log(data, error)
-}
+
+    if (error) {
+        return {
+            error: "Invalid email or password",
+        };
+    }
+
+    redirect("/");}
