@@ -2,7 +2,7 @@ import Link from "next/link";
 import loginAction from "@/app/login/action"
 
 
-export default function Login() {   
+export default function Login() {
     return (
         <>
             <h1 className="text-center">Login</h1>
@@ -12,9 +12,7 @@ export default function Login() {
                 <input type="email" className="border" name="email" placeholder="Email" />
                 <label className="flex flex-col"> Password</label>
                 <input type="password" className="border" name="password" placeholder="Password" />
-                <button type="submit">Submit
-
-                </button>
+                <button className="my-3 bg-amber-300" type="submit"> Submit </button>
             </form>
 
             <Link href="/register">Register</Link>
