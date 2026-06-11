@@ -2,7 +2,7 @@ import Link from "next/link";
 import loginAction from "@/app/login/action"
 
 
-export default function Login() {
+export default function Login() {   
     return (
         <>
             <h1 className="text-center">Login</h1>

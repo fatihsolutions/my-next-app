@@ -7,7 +7,9 @@ export default function Register() {
 
             <form className="flex flex-col px-3.5">
 
-                <label className="flex flex-col"> E-mail <input type="email" className="border" placeholder="Choose A Username" /></label>
+                <label className="flex flex-col"> Username <input type="text" className="border" placeholder="Choose A Username" /></label>
+
+                <label className="flex flex-col"> E-mail <input type="email" className="border" placeholder="Choose A Email" /></label>
                 <label className="flex flex-col"> Password <input type="password" className="border" placeholder="Choose A Password" /></label>
                 <button className="my-3 bg-amber-300" type="submit"> Submit your Registration
 
