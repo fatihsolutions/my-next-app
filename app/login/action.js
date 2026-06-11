@@ -1,7 +1,5 @@
 "use server"
 import { cookies } from "next/headers";
-
-import { redirect } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { redirect } from "next/navigation";
 
