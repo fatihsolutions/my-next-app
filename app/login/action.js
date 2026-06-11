@@ -7,20 +7,22 @@ export default async function loginAction(formData) {
     const email = formData.get("email");
     const password = formData.get("password");
 
-    const { error } =
-        await supabase.auth.signInWithPassword({
-            email,
-            password,
-        });
-    console.log(data, error)
-    if (!error) {
+    // Zoek gebruiker in database
+    const { data, error } = await supabase
+        .from('users') // Je table naam
+        .select('*')
+        .eq('email', email)
+        .eq('password', password)
+        .single();
+
+    console.log('Login result:', data, error)
+
+    if (!error && data) {
         const cookieStore = await cookies()
         cookieStore.set("user", JSON.stringify(data))
         redirect("/")
-
+    } else {
+        console.error('Login error:', error || 'Invalid credentials')
+        return { error: 'Invalid email or password' }
     }
 }
-
-
-
-
