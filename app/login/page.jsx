@@ -7,6 +7,7 @@ export default function Login() {
             <h1 className="text-center">Login</h1>
 
             <form className="flex flex-col px-3.5">
+                
                 <input type="email" className="border" placeholder="Email" />
                 <input type="password" className="border" placeholder="Password" />
                 <button type="submit">Submit
