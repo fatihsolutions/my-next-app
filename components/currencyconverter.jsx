@@ -21,7 +21,7 @@ export default function CurrencyConverter() {
                 const response = await fetch(
                     `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
                 );
-                if (!response.ok) throw new Error('Kon wisselkoers niet ophalen');
+                if (!response.ok) throw new Error('Could not fetch exchange rate');
                 
                 const data = await response.json();
                 setExchangeRate(data.rates[toCurrency]);
@@ -52,13 +52,13 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto mt-8 p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-colors">
-            <h3 className="text-center text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
+        <div className="w-full max-w-2xl mx-auto mt-8 p-4 sm:p-6 md:p-8 bg-yellow-400 dark:bg-yellow-500 rounded-3xl shadow-lg transition-colors">
+            <h3 className="text-center text-2xl sm:text-3xl font-bold mb-6 text-gray-900 dark:text-gray-900">
                 Currency Converter
             </h3>
 
             {error && (
-                <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 rounded">
+                <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 rounded-2xl">
                     {error}
                 </div>
             )}
@@ -66,7 +66,7 @@ export default function CurrencyConverter() {
             <div className="space-y-4">
                 {/* Van valuta */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-900 dark:text-gray-900 mb-2">
                         Bedrag
                     </label>
                     <div className="flex flex-col sm:flex-row gap-2">
@@ -75,14 +75,14 @@ export default function CurrencyConverter() {
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="0.00"
-                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                             min="0"
                             step="0.01"
                         />
                         <select
                             value={fromCurrency}
                             onChange={(e) => setFromCurrency(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         >
                             <option value="EUR">EUR (€)</option>
                             <option value="DKK">DKK (kr)</option>
@@ -115,7 +115,7 @@ export default function CurrencyConverter() {
 
                 {/* Naar valuta */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                    <label className="block text-sm font-medium text-gray-900 dark:text-gray-900 mb-2">
                         Omgerekend
                     </label>
                     <div className="flex flex-col sm:flex-row gap-2">
@@ -124,12 +124,12 @@ export default function CurrencyConverter() {
                             value={convertedAmount || ''}
                             readOnly
                             placeholder="0.00"
-                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
+                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-2xl bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
                         />
                         <select
                             value={toCurrency}
                             onChange={(e) => setToCurrency(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-2xl focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         >
                             <option value="DKK">DKK (kr)</option>
                             <option value="EUR">EUR (€)</option>
@@ -139,21 +139,21 @@ export default function CurrencyConverter() {
 
                 {/* Wisselkoers info */}
                 {exchangeRate && !loading && (
-                    <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
+                    <div className="mt-4 p-4 bg-gray-900/80 dark:bg-gray-900 rounded-2xl text-sm text-white dark:text-gray-300">
                         <p className="font-medium">
                             1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
                         </p>
                         {lastUpdated && (
-                            <p className="text-xs mt-1">
-                                Laatst bijgewerkt: {lastUpdated.toLocaleDateString('nl-NL')}
+                            <p className="text-xs mt-1 opacity-80">
+                                Last updated: {lastUpdated.toLocaleDateString('en-US')}
                             </p>
                         )}
                     </div>
                 )}
 
                 {loading && (
-                    <div className="text-center text-gray-500 dark:text-gray-400">
-                        Wisselkoers laden...
+                    <div className="text-center text-gray-900 dark:text-gray-900">
+                        Loading exchange rate...
                     </div>
                 )}
             </div>
