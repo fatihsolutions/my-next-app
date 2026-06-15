@@ -1,6 +1,9 @@
+import Link from "next/link";
+
 const quickactions = [
     {
         image: "/train.svg",
+        imaget: "/dsb.png",
         title: "Transport Apps",
         desc: "trains buses & tickets"
     },
@@ -27,7 +30,7 @@ export default function QuickActions() {
     return (
         <section className="grid grid-cols-2 gap-4 px-4 mx-4 mt-4">
             {quickactions.map((item) => (
-                <article className="flex flex-col py-4 bg-white px-4 rounded-2xl"
+                <Link href="" className="focus:outline outline-green-500 flex flex-col py-4 bg-white px-4 rounded-2xl"
                     key={item.title}>
                     <img
                         src={item.image}
@@ -37,8 +40,9 @@ export default function QuickActions() {
                     <h2>{item.title}</h2>
 
                     <p>{item.desc}</p>
+                    <img src="{item.imaget}" alt="" />
 
-                </article>
+                </Link>
 
 
             ))}
