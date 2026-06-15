@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,7 @@ export default async function RootLayout({
         <header className="border-b my-4 mx-2 mb-2 items-center py-2">
           <div className="flex justify-around items-center gap-2 ">
             <div className="underline decoration-1 decoration-gray-400 px-1.5 text-center">
-              {user ? <button className="flex items-center"><img src="/person.svg" alt="globus" className="w-10 h-10" />is logged In</button> : "not logged in"}
+              {user ? <button className="flex items-center"><img src="/person.svg" alt="globus" className="w-10 h-10" />is logged In</button> : <Link href="/login">login</Link>}
             </div>
 
 

@@ -2,6 +2,8 @@ import { supabase } from "@/lib/supabase";
 import Image from "next/image";
 import CountrySelectionCard from "@/components/hero";
 import CountrySelector from "@/components/countryselector"
+import QuickActions from "@/components/quickactions"
+import CurrencyConverter from "@/components/currencyconverter"
 
 export default function Home() {
   const setNewView = async () => {
@@ -26,6 +28,8 @@ export default function Home() {
     <main className="bg-gray-100 m-0 p-0">
       <CountrySelectionCard />
       <CountrySelector />
+      <QuickActions />
+      <CurrencyConverter />
       <div>Logged In</div>
     </main>
 
