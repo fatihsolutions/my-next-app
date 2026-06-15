@@ -145,7 +145,7 @@ export default function CurrencyConverter() {
                         </p>
                         {lastUpdated && (
                             <p className="text-xs mt-1">
-                                Laatst bijgewerkt: {lastUpdated.toLocaleDateString('nl-NL')}
+                                Last time updated: {lastUpdated.toLocaleDateString('nl-NL')}
                             </p>
                         )}
                     </div>
