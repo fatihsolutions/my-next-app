@@ -52,13 +52,13 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg shadow-lg">
-            <h3 className="text-center text-2xl font-bold mb-6 text-gray-800">
+        <div className="w-full max-w-2xl mx-auto mt-8 p-4 sm:p-6 md:p-8 bg-white dark:bg-gray-800 rounded-lg shadow-lg transition-colors">
+            <h3 className="text-center text-2xl sm:text-3xl font-bold mb-6 text-gray-800 dark:text-white">
                 Currency Converter
             </h3>
 
             {error && (
-                <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+                <div className="mb-4 p-3 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-600 text-red-700 dark:text-red-300 rounded">
                     {error}
                 </div>
             )}
@@ -66,23 +66,23 @@ export default function CurrencyConverter() {
             <div className="space-y-4">
                 {/* Van valuta */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Bedrag
                     </label>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-2">
                         <input
                             type="number"
                             value={amount}
                             onChange={(e) => setAmount(e.target.value)}
                             placeholder="0.00"
-                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                             min="0"
                             step="0.01"
                         />
                         <select
                             value={fromCurrency}
                             onChange={(e) => setFromCurrency(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         >
                             <option value="EUR">EUR (€)</option>
                             <option value="DKK">DKK (kr)</option>
@@ -94,7 +94,7 @@ export default function CurrencyConverter() {
                 <div className="flex justify-center">
                     <button
                         onClick={handleSwapCurrencies}
-                        className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors"
+                        className="p-2 bg-blue-500 dark:bg-blue-600 text-white rounded-full hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors"
                         aria-label="Wissel valuta's"
                     >
                         <svg
@@ -115,21 +115,21 @@ export default function CurrencyConverter() {
 
                 {/* Naar valuta */}
                 <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                         Omgerekend
                     </label>
-                    <div className="flex gap-2">
+                    <div className="flex flex-col sm:flex-row gap-2">
                         <input
                             type="text"
                             value={convertedAmount || ''}
                             readOnly
                             placeholder="0.00"
-                            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg bg-gray-50"
+                            className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white"
                         />
                         <select
                             value={toCurrency}
                             onChange={(e) => setToCurrency(e.target.value)}
-                            className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                            className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         >
                             <option value="DKK">DKK (kr)</option>
                             <option value="EUR">EUR (€)</option>
@@ -139,20 +139,20 @@ export default function CurrencyConverter() {
 
                 {/* Wisselkoers info */}
                 {exchangeRate && !loading && (
-                    <div className="mt-4 p-4 bg-gray-50 rounded-lg text-sm text-gray-600">
+                    <div className="mt-4 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg text-sm text-gray-600 dark:text-gray-400">
                         <p className="font-medium">
                             1 {fromCurrency} = {exchangeRate.toFixed(4)} {toCurrency}
                         </p>
                         {lastUpdated && (
                             <p className="text-xs mt-1">
-                                Last time updated: {lastUpdated.toLocaleDateString('nl-NL')}
+                                Laatst bijgewerkt: {lastUpdated.toLocaleDateString('nl-NL')}
                             </p>
                         )}
                     </div>
                 )}
 
                 {loading && (
-                    <div className="text-center text-gray-500">
+                    <div className="text-center text-gray-500 dark:text-gray-400">
                         Wisselkoers laden...
                     </div>
                 )}
