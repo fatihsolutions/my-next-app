@@ -2,7 +2,7 @@ import Link from "next/link"
 
 export default function TicketsCards() {
   return (
-    <div className="min-h-screen bg-gray-100 p-5">
+    <div className="bg-gray-100 p-5">
       <h1 className="mb-5 text-3xl font-bold text-gray-900">
         Tickets & Cards
       </h1>
