@@ -22,7 +22,7 @@ export default function CurrencyConverter() {
                     `https://api.exchangerate-api.com/v4/latest/${fromCurrency}`
                 );
                 if (!response.ok) throw new Error('Could not fetch exchange rate');
-                
+
                 const data = await response.json();
                 setExchangeRate(data.rates[toCurrency]);
                 setLastUpdated(new Date(data.date));
@@ -52,7 +52,7 @@ export default function CurrencyConverter() {
     };
 
     return (
-        <div className="w-full max-w-2xl mx-auto mt-8 p-4 sm:p-6 md:p-8 bg-yellow-400 dark:bg-yellow-500 rounded-3xl shadow-lg transition-colors">
+        <div className="mx-4 mt-4 max-w-2xl px-4 p-4 sm:p-6 md:p-8 bg-gradient-to-b from-red-300 to-sky-300 rounded-3xl shadow-lg transition-colors">
             <h3 className="text-center text-2xl sm:text-3xl font-bold mb-6 text-gray-900 dark:text-gray-900">
                 Currency Converter
             </h3>
