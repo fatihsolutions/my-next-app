@@ -1,16 +1,21 @@
 import CountrySelectorMin from "../../components/transport/countryselectormin";
+import Transport from "../../components/transport/transportselect";
 
-export default function Transport() {
+export default function TransportPage() {
 
     return (
-        <>
-            <div>
+        <div className="bg-gray-100 m-0 p-0">
+
+
+            <div className="text-center">
+
                 <h1>Public Transport</h1>
                 <p>Everything you need to get around</p></div>
 
 
             <CountrySelectorMin />
-        </>
+            <Transport />
+        </div>
     )
 
 }

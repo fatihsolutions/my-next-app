@@ -1,29 +1,16 @@
 export default function CountrySelectorMin() {
 
-    const TransportSystem = [
-        {
-            title: "Metro & S - train",
-            description: "Fast network in Copenhagen.Runs 24/7 on weekends",
-            image: "/train.svg",
-            url: "https://dsb.dk"
 
-        },
-
-        {
-            title: "Buses"
-
-        }
-    ]
 
     return (
-        <div>
-            <button className="bg-white border-gray-400 border rounded-2xl">
+        <div className="text-center mt-4 flex justify-center gap-4">
+            <button className="bg-white border-gray-400 border rounded-2xl px-4 py-2">
                 <small>DK</small>
                 <span>Denmark</span>
             </button>
-            <button className=" bg-white border-gray-400 border rounded-2xl">
+            <button className=" bg-white border-gray-400 border rounded-2xl px-1">
                 <small>NL</small>
-                <span>Netherland</span>
+                <span>Netherlands</span>
             </button>
         </div>
     )

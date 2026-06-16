@@ -32,7 +32,7 @@ export default async function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <header className="border-b my-4 mx-2 mb-2 items-center py-2">
+        <header className="border-b my-4 mx-2 mb-0 items-center py-2">
           <div className="flex justify-around items-center gap-2 ">
             <div className="underline decoration-1 decoration-gray-400 px-1.5 text-center">
               {user ? <button className="flex items-center"><img src="/person.svg" alt="globus" className="w-10 h-10" />is logged In</button> : <Link href="/login">login</Link>}
