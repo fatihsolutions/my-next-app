@@ -1,5 +1,5 @@
 import CountrySelectorMin from "../../components/transport/countryselectormin";
-import Transport from "../../components/transport/transportselect";
+
 
 export default function TransportPage() {
 
@@ -14,7 +14,7 @@ export default function TransportPage() {
 
 
             <CountrySelectorMin />
-            <Transport />
+
         </div>
     )
 
