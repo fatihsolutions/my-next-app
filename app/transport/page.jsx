@@ -1,5 +1,6 @@
 import CountrySelectorMin from "../../components/transport/countryselectormin";
 import Transport from "../../components/transport/transportselect";
+import TicketsCards from '../../components/transport/Tickets';
 
 export default function TransportPage() {
 
@@ -15,6 +16,7 @@ export default function TransportPage() {
 
             <CountrySelectorMin />
             <Transport />
+            <TicketsCards />
         </div>
     )
 
