@@ -52,8 +52,8 @@ export default function TicketsCards() {
               Rechargeable card for frequent travelers. Cheaper per trip.
             </p>
           </div>
-        </div></a>
-
+        </div>
+      </a>
       {/* Card 3 */}
       <a
         href="https://ruter.no/en/about-our-tickets/zones-and-zone-maps"
