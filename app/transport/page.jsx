@@ -16,7 +16,8 @@ export default function TransportPage() {
 
 
             <CountrySelectorMin />
-
+            <TicketsCards />
+            <Mistake />
         </div>
     )
 
