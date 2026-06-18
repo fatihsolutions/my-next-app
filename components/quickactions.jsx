@@ -30,7 +30,9 @@ export default function QuickActions() {
     return (
         <section className="grid grid-cols-2 gap-4 px-4 mx-4 mt-4">
             {quickactions.map((item) => (
-                <Link href="" className="focus:outline outline-green-500 flex flex-col py-4 bg-white px-4 rounded-2xl"
+                <Link href="/transport" className="flex flex-col py-4 px-4 rounded-2xl bg-white border-2
+                 border-transparent transition-all duration-200 hover:border-blue-500 hover:shadow-lg hover:scale-105
+                focus:outline-none focus:ring-4 focus:ring-blue-200"
                     key={item.title}>
                     <img
                         src={item.image}
