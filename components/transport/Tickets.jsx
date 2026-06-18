@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import React from 'react';
 
 export default function TicketsCards() {
   return (
     <div className="bg-gray-100 p-4">
-      
+
       {/* Header (smaller) */}
       <h1 className="mb-4 text-2xl font-semibold text-gray-900">
         Tickets & Cards
@@ -19,9 +20,11 @@ export default function TicketsCards() {
           <h2 className="mb-1 text-base font-semibold text-gray-900">
             DOT Tickets
           </h2>
-          <p className="text-sm text-gray-600">
-            Main app for Copenhagen transport. Buy tickets, check zones.
-          </p>
+          <a href="https://ruter.no/en/about-our-tickets/zones-and-zone-maps">
+            <p className="text-sm text-gray-600">
+              Main app for Copenhagen transport. Buy tickets, check zones.
+            </p>
+          </a>
         </div>
       </div>
 
@@ -48,15 +51,15 @@ export default function TicketsCards() {
         </div>
 
         <div>
-          <h2 className="mb-1 text-base font-semibold text-gray-900">
-            Zone System
-          </h2>
-          <p className="text-sm text-gray-600">
-            Travel cost based on zones crossed. Copenhagen center is Zone 1-2.
-          </p>
+          <a href="https://dinoffentligetransport.dk/planlaeg-din-rejse/zone-og-linjekort">
+            <h2 className="mb-1 text-base font-semibold text-gray-900">
+            </h2>
+            <p className="text-sm text-gray-600">
+              Travel cost based on zones crossed. Copenhagen center is Zone 1-2.
+            </p></a>
         </div>
-      </div>
+      </div >
 
-    </div>
+    </div >
   );
 }
