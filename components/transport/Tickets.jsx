@@ -35,23 +35,23 @@ export default function TicketsCards() {
         href="https://www.rejsekort.dk/"
         target="_blank"
         rel="noopener noreferrer"
-      ></a>
+      >
         
-      <div className="mb-3 flex rounded-2xl bg-white p-4 shadow-sm">
-        <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
-          <span className="text-lg">💳</span>
-        </div>
+        <div className="mb-3 flex rounded-2xl bg-white p-4 shadow-sm">
+          <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
+            <span className="text-lg">💳</span>
+          </div>
 
-        <div>
-          <h2 className="mb-1 text-base font-semibold text-gray-900">
-            Rejsekort
-          </h2>
-          <p className="text-sm text-gray-600">
-            Rechargeable card for frequent travelers. Cheaper per trip.
-          </p>
+          <div>
+            <h2 className="mb-1 text-base font-semibold text-gray-900">
+              Rejsekort
+            </h2>
+            <p className="text-sm text-gray-600">
+              Rechargeable card for frequent travelers. Cheaper per trip.
+            </p>
+          </div>
         </div>
-      </div>
-
+      </a>
       {/* Card 3 */}
       <a
         href="https://ruter.no/en/about-our-tickets/zones-and-zone-maps"
