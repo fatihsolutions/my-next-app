@@ -1,7 +1,8 @@
-import Link from "next/link"
+import Link from "next/link";
+
 export default function Mistake() {
   return (
-    <div className="w-full max-w-2xl">
+    <div className="bg-gray-100 p-4">
       {/* Header */}
       <div className="flex items-center gap-2 mb-4">
         <div className="w-8 h-8 rounded-full bg-orange-500 flex items-center justify-center">
