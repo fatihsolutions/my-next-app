@@ -38,7 +38,7 @@ export default async function RootLayout({
               {user ? <button className="flex items-center"><img src="/person.svg" alt="globus" className="w-10 h-10" />is logged In</button> : <Link href="/login">login</Link>}
             </div>
 
-
+            <a href="/"><span><img src="/home.svg" alt="" /></span></a>
             <span>Student Across Borders</span>
           </div>
         </header>
