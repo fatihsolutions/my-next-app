@@ -31,13 +31,13 @@ export default function TicketsCards() {
             </p>
           </div>
         </div>
-
-        {/* Card 2 */}
-        <a
-          href="https://www.rejsekort.dk/"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
+      </a>
+      {/* Card 2 */}
+      <a
+        href="https://www.rejsekort.dk/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
 
         <div className="mb-3 flex rounded-2xl bg-white p-4 shadow-sm">
           <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
@@ -52,29 +52,30 @@ export default function TicketsCards() {
               Rechargeable card for frequent travelers. Cheaper per trip.
             </p>
           </div>
-        </div>
+        </div></a>
 
-        {/* Card 3 */}
-        <a
-          href="https://ruter.no/en/about-our-tickets/zones-and-zone-maps"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <div className="flex cursor-pointer rounded-2xl bg-white p-4 shadow-sm transition hover:shadow-md">
-            <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
-              <span className="text-lg">🗺️</span>
-            </div>
-
-            <div>
-              <h2 className="mb-1 text-base font-semibold text-gray-900">
-                Zone System
-              </h2>
-              <p className="text-sm text-gray-600">
-                Travel cost based on zones crossed. Copenhagen center is Zone 1-2.
-              </p>
-            </div>
+      {/* Card 3 */}
+      <a
+        href="https://ruter.no/en/about-our-tickets/zones-and-zone-maps"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <div className="flex cursor-pointer rounded-2xl bg-white p-4 shadow-sm transition hover:shadow-md">
+          <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
+            <span className="text-lg">🗺️</span>
           </div>
 
-        </div >
-        );
+          <div>
+            <h2 className="mb-1 text-base font-semibold text-gray-900">
+              Zone System
+            </h2>
+            <p className="text-sm text-gray-600">
+              Travel cost based on zones crossed. Copenhagen center is Zone 1-2.
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+  );
 }
