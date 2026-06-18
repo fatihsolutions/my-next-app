@@ -31,6 +31,12 @@ export default function TicketsCards() {
       </a>
 
       {/* Card 2 */}
+      <a
+        href="https://www.rejsekort.dk/"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+        
       <div className="mb-3 flex rounded-2xl bg-white p-4 shadow-sm">
         <div className="mr-3 flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100">
           <span className="text-lg">💳</span>
